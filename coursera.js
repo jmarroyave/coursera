@@ -6,28 +6,31 @@ function _Coursera(loadingTime){
 	var _w = 0;
 	var _l = 0;
 	var _a = null;
-	var untilEndOfCourse = false;
-	var includeSubtitles = false;
+	var _includeSubtitles = false;
+	var _untilEndOfCourse = false;
 	
 	this.downloadVideos = function(includeSubtitles = false){
-		untilEndOfCourse = true;
+		_untilEndOfCourse = true;
 		console.log("Downloading course videos");
+		_includeSubtitles = includeSubtitles;
 		_downloadCourse();			
 	}
 
 	this.downloadWeekVideos = function(includeSubtitles = false){
-		untilEndOfCourse = false;
+		_untilEndOfCourse = false;
 		console.log("Downloading week's course videos");
+		_includeSubtitles = includeSubtitles;
 		_downloadCourse();
 	}
 
 	var _downloadCourse = function(){
 		_w = 0;
-		setTimeout(_nextWeek, this.loadingTime * 1000);
+		_nextWeek();
 	}
 
 	var _nextWeek = function(){
-		if(_w > 0 && !untilEndOfCourse){
+		if(_w > 0 && !_untilEndOfCourse){
+			console.log("Download finish");
 			return;
 		}
 		_w++;
@@ -58,7 +61,8 @@ function _Coursera(loadingTime){
 				if(b[0].childNodes[0].innerHTML == "Lecture Video"){
 					console.log("Downloading video lecture " + _l + "-" + (_i + 1));
 	    				b[0].click()
-					if(includeSubtitles && b.length > 1){
+					if(_includeSubtitles && b.length > 1){
+						console.log("Downloading subtitles for video lecture " + _l + "-" + (_i + 1));
 		    				b[1].click()
 					}
    				}		
@@ -96,6 +100,10 @@ function _Coursera(loadingTime){
 				b.click()
 	   			setTimeout(_nextWeek , this.loadingTime * 1000);
 				return;
+	   		case "Course Home":
+				console.log("Download finish");
+				b.click()
+				return;
 		}
 	}
 
@@ -117,4 +125,4 @@ var loadingTime = 45;
 
 // Log into coursera and navigate to the week that you want to download
 var coursera = new _Coursera(loadingTime);
-coursera.downloadVideos();
+coursera.downloadWeekVideos(true);
