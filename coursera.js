@@ -6,14 +6,30 @@ function _Coursera(loadingTime){
 	var _w = 0;
 	var _l = 0;
 	var _a = null;
+	var untilEndOfCourse = false;
+	var includeSubtitles = false;
 	
-	this.downloadVideos = function(){
-		_w = 0;
+	this.downloadVideos = function(includeSubtitles = false){
+		untilEndOfCourse = true;
 		console.log("Downloading course videos");
+		_downloadCourse();			
+	}
+
+	this.downloadWeekVideos = function(includeSubtitles = false){
+		untilEndOfCourse = false;
+		console.log("Downloading week's course videos");
+		_downloadCourse();
+	}
+
+	var _downloadCourse = function(){
+		_w = 0;
 		setTimeout(_nextWeek, this.loadingTime * 1000);
 	}
 
 	var _nextWeek = function(){
+		if(_w > 0 && !untilEndOfCourse){
+			return;
+		}
 		_w++;
 		console.log("Starting week " + _w);
 		_l = 0;
@@ -42,6 +58,9 @@ function _Coursera(loadingTime){
 				if(b[0].childNodes[0].innerHTML == "Lecture Video"){
 					console.log("Downloading video lecture " + _l + "-" + (_i + 1));
 	    				b[0].click()
+					if(includeSubtitles && b.length > 1){
+		    				b[1].click()
+					}
    				}		
 			}   
 		} 
