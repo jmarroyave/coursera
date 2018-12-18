@@ -24,13 +24,13 @@ Index of the item to start from.
 node coursera.js neural-networks fetch
 ```
 ## Config options
-#### timeBetween [30 secs]
+##### timeBetween [30 secs]
 Time to wait between downloads to prevent a server timeout 
-#### userAgent [Mozilla/5.0]
+##### userAgent [Mozilla/5.0]
 User agent header
-#### timeout [2 mins]
+##### timeout [2 mins]
 HTTP Request default timeout
-#### dataPath [./]
+##### dataPath [./]
 Path where the videos will be downloaded to
-#### cookies [none]
+##### cookies [none]
 Session cookies
