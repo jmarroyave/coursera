@@ -4,19 +4,19 @@ Query your Coursera courses in the console with nodejs.
 ## Installation and configuration
 * Install nodejs
 * Download this package
-* Login on Coursera and copy the cookies to the --config.js-- file
+* Login on Coursera and copy the cookies to the **config.js** file
 
 ## Usage
 ### Fetch resources
-node coursera.js *course-slug* fetch [type=**video**/subtitles/all] [start=**1**]
+node coursera.js course-slug fetch [type=video/subtitles/all] [start=1]
 #### Options 
-##### type
-Type of resource to download, the default is video.
+##### type [video]
+Type of resource to download.
 * video
 * subtitles
 * all
-##### start
-Index of the item to start from, the default is 1.
+##### start [1]
+Index of the item to start from.
 
 ## Example
 ```bash
