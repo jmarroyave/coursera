@@ -8,7 +8,7 @@ Query your Coursera courses in the console with nodejs.
 
 ## Usage
 ### Fetch resources
-* node coursera.js *course-slug* fetch [type=**video**/subtitles/all] [start=**1**]
+node coursera.js *course-slug* fetch [type=**video**/subtitles/all] [start=**1**]
 #### Options 
 ##### type
 Type of resource to download, the default is video.
@@ -23,15 +23,14 @@ Index of the item to start from, the default is 1.
 # download all videos from course neural-networks
 node coursera.js neural-networks fetch
 ```
-
 ## Config options
-### timeBetween [30 secs]
+#### timeBetween [30 secs]
 Time to wait between downloads to prevent a server timeout 
-### userAgent [Mozilla/5.0]
+#### userAgent [Mozilla/5.0]
 User agent header
-### timeout [2 mins]
+#### timeout [2 mins]
 HTTP Request default timeout
-### dataPath [./]
+#### dataPath [./]
 Path where the videos will be downloaded to
-### cookies [none]
+#### cookies [none]
 Session cookies
