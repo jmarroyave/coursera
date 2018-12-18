@@ -1,31 +1,37 @@
-# Coursera Multidownload
-Perform a multiple download on a course you are following
+# Coursera
+Query your Coursera courses in the console with nodejs.
+
+##Installation and configuration
+* Install nodejs
+* Download this package
+* Login on Coursera and copy the cookies to the --config.js-- file
 
 ##Usage
-* Open your browser and navigate to the course you want to download
-* Navigate to the week that you want to download. The script will start downloading the videos in the selected week until reach the end of the course.
-* Open the browser's **developer tools** (pressing F12 in firefox, and i think in chrome too) and click in the console tab.
-* Locate the textbox with this symbol **(>>)** in the tab's bottom
-* Open the document with notepad or other text editor and select all, copy it and paste it in the >> textbox
-* Now press enter and wait.
-
-##Options
-###loadingTime
-Time aprox. to wait for a page to load, in seconds.
-
-##Methods
-###downloadVideos(*[includeSubtitles = false]*)
-Download all videos from the current week until reach the end of the course.
-  
-###downloadWeekVideos(*[includeSubtitles = false]*)
-Download all videos from the current week.
+###Fetch resources
+* node coursera.js *course-slug* fetch [type=**video**/subtitles/all] [start=**1**]
+####Options 
+#####type
+Type of resource to download, the default is video.
+* video
+* subtitles
+* all
+#####start
+Index of the item to start from, the default is 1.
 
 ##Example
-```javascript
-// Time aprox. to wait for a page to load, in seconds
-var loadingTime = 45;
-
-// Log into coursera and navigate to the week that you want to download
-var coursera = new _Coursera(loadingTime);
-coursera.downloadVideos();
+```bash
+# download all videos from course neural-networks
+node coursera.js neural-networks fetch
 ```
+
+##Config options
+###timeBetween [30 secs]
+Time to wait between downloads to prevent a server timeout 
+###userAgent [Mozilla/5.0]
+User agent header
+###timeout [2 mins]
+HTTP Request default timeout
+###dataPath [./]
+Path where the videos will be downloaded to
+###cookies [none]
+Session cookies
