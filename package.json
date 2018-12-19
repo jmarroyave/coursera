@@ -1,0 +1,9 @@
+{
+  "name": "coursera",
+  "version": "1.0.0",
+  "description": "Coursera console api",
+  "main": "index.js",
+  "author": "jmarroyave.compsci@gmail.com",
+  "dependencies": {
+  }
+}

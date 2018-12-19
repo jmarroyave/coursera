@@ -30,7 +30,7 @@ Time to wait between downloads to prevent a server timeout
 User agent header
 ##### timeout [2 mins]
 HTTP Request default timeout
-##### dataPath [./]
+##### dataPath [./downloads]
 Path where the videos will be downloaded to
 ##### cookies [none]
 Session cookies
