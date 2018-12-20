@@ -1,7 +1,7 @@
-const timeBetween = 1000 * 30;
+const timeBetween = 1000 * 1;
 const userAgent = 'Mozilla/5.0';
 const timeout = 60 * 1000 * 2;
-const dataPath = './downloads';
-const cookies = '';
+const dataPath = '/home/jm/Downloads/Coursera';
+const cookies = 'CSRF3-Token=1546106413.hYC7c4ztTNVo5kHo; __204u=9810119565-1545242413785; __204r=; __400vt=1545245892160; _ga=GA1.2.1914609866.1545242430; _gid=GA1.2.1067413392.1545242430; _tq_id.TV-63455409-1.39ed=6aa6d5d629cf1464.1545242431.0.1545245872..; stc113717=env:1545245881%7C20190119185801%7C20181219192801%7C1%7C1030880:20191219185801|uid:1545242431529.154536095.83272958.113717.228700761.:20191219185801|srchist:1030880%3A1545245881%3A20190119185801:20191219185801|tsa:1545245881594.1339139367.531929.5726695624082179.1:20181219192801; _fbp=fb.1.1545242437087.2099002394; login-email=jmarroyave%40gmail.com; CAUTH=YEXbyvWKayy9DpvQfrRReGrNcY4qiorMbPm2Tyy15NUVAdpDfeNYMJZtvnDNwggPjTo1E4K5fURXco01Y8z4Uw.p0kKEDY-r4oM0lRI2aaeeA.9lAiiRvkCJMUDFOo6JmISDBLBXJ7m9EITv-NS-RNsdsVBEjetsUXgLrsN8PQxWqZZuP4b7GNSRADRR7xLunQlB387gJsLMBvJzEeXqW0rW4WX3r-ocj5QiVM9I7caIoym2JB62_Y-pi_ZUtm_RfwIr7Y6fRxhMUh4s7UZY4SFjv7grfCX-jfqUoz38pbvji-; maestro_login_flag=1; __400v=b9b4864b-3472-42d5-8044-69e61378bdda; _dc_gtm_UA-28377374-1=1; _dc_gtm_UA-86370891-1=1; csrftoken=OdZ7WukDuHSStmdEK5zZaSUM';
 
 module.exports = {timeBetween : timeBetween, userAgent: userAgent, timeout: timeout, dataPath: dataPath, cookies: cookies};
